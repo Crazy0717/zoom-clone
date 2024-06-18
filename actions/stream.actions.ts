@@ -14,10 +14,10 @@ export const tokenProvider = async () => {
   if (!apiSecret) throw new Error("no api secret")
 
   const client = new StreamClient(apiKey, apiSecret)
-  const expirationTime = Math.round(new Date().getTime() / 1000) + 60 * 60
-  const issued = Math.floor(Date.now() / 1000) - 60
 
-  const token = client.createToken(user.id, expirationTime, issued)
-
-  return token
+  return client.createToken(
+    user.id,
+    Math.round(new Date().getTime() / 1000) + 60 * 60,
+    Math.floor(Date.now() / 1000) - 60
+  )
 }

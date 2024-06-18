@@ -32,8 +32,7 @@ const MeetingTypeList = () => {
         toast({ title: "Please select a date and time" })
         return
       }
-      const id = crypto.randomUUID()
-      const call = client.call("default", id)
+      const call = client.call("default", crypto.randomUUID())
       if (!call) throw new Error("failed to create call")
 
       const startsAt =
@@ -95,7 +94,6 @@ const MeetingTypeList = () => {
           handleClick={createMeeting}
           title="Create meeting"
           buttonText="Start Meeting"
-          className="text-center"
         >
           <div className="flex flex-col gap-2.5">
             <label className="text-base leading-[22px] text-sky-2">
@@ -134,7 +132,6 @@ const MeetingTypeList = () => {
           }}
           title="Meeting created"
           buttonText="Copy Meeting Link"
-          className="text-center"
           image="/icons/checked.svg"
           buttonIcon="/icons/copy.svg"
         />
@@ -145,7 +142,6 @@ const MeetingTypeList = () => {
         handleClick={createMeeting}
         title="Start an instant meeting"
         buttonText="Start Meeting"
-        className="text-center"
       />
       <MeetingModal
         isOpen={meeting === "isJoiningMeeting"}
@@ -153,7 +149,6 @@ const MeetingTypeList = () => {
         handleClick={() => router.push(values.link)}
         title="Type the link here"
         buttonText="Join Meeting"
-        className="text-center"
       >
         <Textarea
           placeholder="Meeting link"

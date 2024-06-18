@@ -3,7 +3,6 @@ import Loader from "@/components/Loader"
 import MeetingRoom from "@/components/MeetingRoom"
 import MeetingSetup from "@/components/MeetingSetup"
 import { useGetCallById } from "@/hooks/useGetCallById"
-import { useUser } from "@clerk/nextjs"
 import { StreamCall, StreamTheme } from "@stream-io/video-react-sdk"
 import { useState } from "react"
 
@@ -14,7 +13,6 @@ interface paramsTypes {
 }
 
 const Meeting = ({ params: { id } }: paramsTypes) => {
-  const { user, isLoaded } = useUser()
   const [isSetupCompleted, setIsSetupCompleted] = useState(false)
   const { call, isCallLoading } = useGetCallById(id)
 

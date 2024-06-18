@@ -25,11 +25,3 @@ export const sideBarLinks = [
     route: "/personal-room",
   },
 ]
-
-export const avatarImages = [
-  "/images/avatar-1.jpg",
-  "/images/avatar-1.jpg",
-  "/images/avatar-1.jpg",
-  "/images/avatar-1.jpg",
-  "/images/avatar-1.jpg",
-]

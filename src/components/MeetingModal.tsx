@@ -40,7 +40,12 @@ const MeetingModal = ({
               height={70}
             />
           )}
-          <h2 className={cn("text-3xl font-bold leading-[40px]", className)}>
+          <h2
+            className={cn(
+              "text-3xl font-bold leading-[40px] text-center",
+              className
+            )}
+          >
             {title}
           </h2>
           {children}
